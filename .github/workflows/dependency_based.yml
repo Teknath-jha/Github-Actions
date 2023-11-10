@@ -1,10 +1,13 @@
 name: Dependency base workflows
 
-on: 
+on:
     push:
-        - main
+        branches:
+            - main
     pull_request:
-        - main
+        branches:
+            - main
+    workflow_dispatch:
     
 
 jobs:

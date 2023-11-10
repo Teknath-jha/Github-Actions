@@ -1,11 +1,12 @@
-name: Dependency base workflows
-'on':
+name: Dependency based workflows
+
+
+on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+
+
 jobs:
   get_thirsty:
     runs-on: ubuntu-latest

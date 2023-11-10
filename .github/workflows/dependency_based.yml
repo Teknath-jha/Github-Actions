@@ -1,45 +1,37 @@
 name: Dependency base workflows
-
-on:
-    push:
-        branches:
-            - main
-    pull_request:
-        branches:
-            - main
-    
-
+'on':
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 jobs:
-    get_thirsty:
-        runs-on: ubuntu-latest
-        steps:
-            - name: get thirsty first
-              run: echo "I am thirsty"
-              shell: bash
-    
-    need_water:
-        runs-on: ubuntu-latest
-        steps:
-            - name: then need water
-              runs: echo "I got water but need glass too"
-              shell : bash
-
-    get_glass:
-        runs-on: ubuntu-latest
-        steps:
-            - name: get glass now
-              runs: echo "I got glass now"
-              shell : bash
-    
-
-    drink_water:
-        runs-on: ubuntu-latest
-        needs: ['get_thirsty','need_water','get_glass']
-        steps:
-            - name: drink water now
-              runs: echo "I drink water now"
-              shell: bash
-
-
-
-
+  get_thirsty:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get thirsty first
+        run: echo "I am thirsty"
+        shell: bash
+  need_water:
+    runs-on: ubuntu-latest
+    steps:
+      - name: then need water
+        runs: echo "I got water but need glass too"
+        shell: bash
+  get_glass:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get glass now
+        runs: echo "I got glass now"
+        shell: bash
+  drink_water:
+    runs-on: ubuntu-latest
+    needs:
+      - get_thirsty
+      - need_water
+      - get_glass
+    steps:
+      - name: drink water now
+        runs: echo "I drink water now"
+        shell: bash

@@ -18,13 +18,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: then need water
-        runs: echo "I got water but need glass too"
+        run: echo "I got water but need glass too"
         shell: bash
   get_glass:
     runs-on: ubuntu-latest
     steps:
       - name: get glass now
-        runs: echo "I got glass now"
+        run: echo "I got glass now"
         shell: bash
   drink_water:
     runs-on: ubuntu-latest
@@ -34,5 +34,5 @@ jobs:
       - get_glass
     steps:
       - name: drink water now
-        runs: echo "I drink water now"
+        run: echo "I drink water now"
         shell: bash

@@ -44,3 +44,27 @@ jobs:
         - name: All is well
           run: echo "All is well, I am no more thirsty"
           shell: bash
+
+  must_hungry:
+    runs-on: ubuntu-latest
+    steps:
+        - name: i am hungry
+          run: echo "I am hungry"
+          shell: bash
+  get_food:
+    runs-on: ubuntu-latest
+    needs:
+        - must_hungry
+    steps:
+        - name: get food
+          run: echo "i got food man!"
+          shell: bash
+  eat_food:
+    runs-on: ubuntu-latest
+    needs:
+        - must_hungry
+        - get_food
+    steps:
+        - name: eating food
+          run: echo "Eating food!"
+          shell: bash

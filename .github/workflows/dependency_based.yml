@@ -37,10 +37,10 @@ jobs:
         run: echo "I drink water now"
         shell: bash
   feeling_good:
-    runs-on:
-        needs:
+    runs-on: ubuntu-latest
+    needs:
             - drink-water
-        steps:
-            - name: All is well
-              run: echo "All is well, I am no more thirsty"
-              shell: bash
+    steps:
+        - name: All is well
+          run: echo "All is well, I am no more thirsty"
+          shell: bash
